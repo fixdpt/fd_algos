@@ -1,0 +1,12 @@
+bin
+CMakeCache.txt
+CMakeFiles
+Makefile
+cmake_install.cmake
+*.a
+CTestTestfile.cmake
+Testing
+Doxyfile*
+html
+CMakeDoxy*
+DartConfiguration.tcl
