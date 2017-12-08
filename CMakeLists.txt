@@ -10,3 +10,4 @@ add_subdirectory(test)
 enable_testing()
 
 add_test(test_fd_ht test test_fd_ht)
+add_test(test_fd_bounded_q test test_fd_bounded_q)

@@ -22,5 +22,7 @@ typedef int fd_ret_t;
 #define FD_OK 0
 #define FD_EARG 1
 #define FD_NOT_FOUND 2
+#define FD_FULL 3
+#define FD_EMPTY 3
 
 #endif

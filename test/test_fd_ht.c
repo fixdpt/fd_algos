@@ -1,3 +1,19 @@
+/*
+ * Copyright 2017 Granville Barnett
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 #include <stdlib.h>
 
 #include "fd_ht.h"
@@ -69,12 +85,12 @@ void test_remove(void) {
   TEST_ASSERT(FD_OK == fd_ht_remove(&ht, &k, &v_out));
   TEST_ASSERT_NOT_NULL(v_out);
   TEST_ASSERT(2 == ((value_t*)v_out)->v);
-  key_t k2 = {8}; // maps to same bucket as k
-  value_t v2 = { 3} ;
+  key_t k2 = {8};  // maps to same bucket as k
+  value_t v2 = {3};
   TEST_ASSERT(FD_NOT_FOUND == fd_ht_get(&ht, &k, &v_out));
   fd_ht_put(&ht, &k, &v);
   fd_ht_put(&ht, &k2, &v2);
-  key_t k_not_there = { 15 }; // maps to same bucket as k + k2
+  key_t k_not_there = {15};  // maps to same bucket as k + k2
   TEST_ASSERT(FD_NOT_FOUND == fd_ht_get(&ht, &k_not_there, &v_out));
   TEST_ASSERT(FD_OK == fd_ht_remove(&ht, &k, &v_out));
   TEST_ASSERT_NOT_NULL(v_out);

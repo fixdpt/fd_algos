@@ -4,3 +4,8 @@
 cmake .
 make
 ~~~
+
+~~~
+make test
+ctest -T memcheck
+~~~
